@@ -11,7 +11,7 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-$lat = "TESTTTTT";
+$sss = json_encode($arrPostData);
 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
@@ -37,7 +37,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "json_encode($arrPostData)";
+  $arrPostData['messages'][0]['text'] = "$sss";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
