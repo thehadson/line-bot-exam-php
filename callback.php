@@ -11,8 +11,13 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 
-$lat->getLatitude();
-$lng->getLongitude();
+if ($geolocation instanceof LocationMessage) 
+{
+   $lat=$geolocation->getLatitude();
+   $lat=$geolocation->getLongitude();
+}
+
+
 
 if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
