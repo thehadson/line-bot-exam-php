@@ -14,7 +14,7 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
 if ($geolocation instanceof LocationMessage) 
 {
    $lat=$geolocation->getLatitude();
-   $lat=$geolocation->getLongitude();
+   $lng=$geolocation->getLongitude();
 }
 
 
@@ -43,7 +43,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "$lat . $lng";
+  $arrPostData['messages'][0]['text'] = $lat;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
